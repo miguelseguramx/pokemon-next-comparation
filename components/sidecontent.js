@@ -46,9 +46,9 @@ function SideContent({ ip }) {
             Static Site Generation (SSG) con rutas dinamicas
           </Link>
         </li>
-        <li>
+        {/* <li>
           Incremental Static Regeneration (ISR)
-        </li>
+        </li> */}
       </ul>
       <div>
         <a
