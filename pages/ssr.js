@@ -9,7 +9,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 export default function Pokemon({ data, ip }) {
   return (
     <div className={styles.container}>
-      <Head />
+      <Head title="Server Side Render" />
 
       <main className={styles.main}>
         <SideContent ip={ip} />

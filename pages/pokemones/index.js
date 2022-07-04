@@ -12,7 +12,7 @@ function capitalize(word) {
 export default function Pokemon({ data }) {
   return (
     <div className={styles.container}>
-      <Head />
+      <Head title="Lista de paginas estaticas" />
 
       <main className={styles.main}>
         <div>

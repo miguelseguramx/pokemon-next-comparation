@@ -33,7 +33,7 @@ export default function Pokemon() {
 
   return (
     <div className={styles.container}>
-      <Head />
+      <Head title="Client Side Rendering" />
 
       <main className={styles.main}>
         <SideContent />
