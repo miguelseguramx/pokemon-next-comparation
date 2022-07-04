@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from '../styles/index.module.css'
 import Head from '../components/head'
@@ -7,30 +6,7 @@ import SideContent from '../components/sidecontent'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
-// THIS IS JUST A SIMULATION OF HOW WILL LOOK A SINGLE PAGE APLICATION
-
-export default function Pokemon() {
-  const [data, setData] = useState({})
-
-  const getPokemon = async () => {
-    const { name, location_area_encounters, sprites } = await fetcher('https://pokeapi.co/api/v2/pokemon/1')
-    const pokemonBattles = await fetcher(location_area_encounters)
-    setData({
-      name,
-      image: sprites.front_default,
-      battles: pokemonBattles,
-    })
-  }
-
-  useEffect(() => {
-    // We call the API on the Frontend
-    setTimeout(() => {
-      getPokemon()
-    }, 500);
-  }, []);
-
-  if (!data.name) return null
-
+export default function Pokemon({ data }) {
   return (
     <div className={styles.container}>
       <Head />
@@ -52,7 +28,24 @@ export default function Pokemon() {
           </div>
         </div>
       </main>
+
       <Footer />
     </div>
   )
+}
+
+export async function getStaticProps() {
+  // Traemos toda la informacion necesaria para renderizar una pagina web.
+  const { name, location_area_encounters, sprites } = await fetcher('https://pokeapi.co/api/v2/pokemon/1')
+  const pokemonBattles = await fetcher(location_area_encounters)
+
+  return {
+    props: {
+      data: {
+        name,
+        image: sprites.front_default,
+        battles: pokemonBattles,
+      },
+    },
+  }
 }
