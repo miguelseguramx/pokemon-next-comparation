@@ -57,7 +57,7 @@ export async function getStaticProps({ params: { pokemon_id } }) {
   // Traemos toda la informacion necesaria para renderizar una pagina web.
   const { name, location_area_encounters, sprites } = await fetcher(`https://pokeapi.co/api/v2/pokemon/${pokemon_id}`)
   const pokemonBattles = await fetcher(location_area_encounters)
-  // console.log('Generando la pagina correspondiente al pokemón: ', pokemon_id)
+  console.log('Generando la pagina correspondiente al pokemón: ', pokemon_id)
 
   return {
     props: {
