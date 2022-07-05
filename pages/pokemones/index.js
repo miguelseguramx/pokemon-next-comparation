@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import styles from '../../styles/index.module.css'
 import Head from '../../components/head'
 import Footer from '../../components/footer'
 
@@ -11,18 +10,18 @@ function capitalize(word) {
 
 export default function Pokemon({ data }) {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head title="Lista de paginas estaticas" />
 
-      <main className={styles.main}>
+      <main className="main">
         <div>
           <h1>getStaticProps y getStaticPaths</h1>
-          <p className={styles.description}>
+          <p className="description">
             Hemos creado la siguiente lista de paginas estaticas utilizando las rutas dinamicas de Next.js
             y las funciones de <b>getStaticProps y getStaticPaths</b>, donde getStaticProps se encarga de generar
             las rutas y getStaticProps se encarga de generar los datos para cada una de las mismas.
           </p>
-          <p className={styles.description}>
+          <p className="description">
             Al usar Incremental Static Regeneration, puedes navegar por tu cuenta a la pagina de cualquiera de las paginas
             de los casi 1000 pokemones que estan disponibles, solo cambiando el numero de la ruta, teniendo asi más de 1000
             paginas estaticas solo con un pequeño fragmento de codigo y los poderes de Next.js.
@@ -34,7 +33,7 @@ export default function Pokemon({ data }) {
           </a>
         </div>
         <div>
-          <ul className={styles.pokemones}>
+          <ul className="pokemones">
             {data.map(({ name, url }) => (
               <li key={name}>
                 <Link href={url} passHref>

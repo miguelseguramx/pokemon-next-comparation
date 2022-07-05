@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import styles from '../styles/index.module.css'
 import Head from '../components/head'
 import Footer from '../components/footer'
 import SideContent from '../components/sidecontent'
@@ -32,13 +31,13 @@ export default function Pokemon() {
   if (!data.name) return null
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head title="Client Side Rendering" />
 
-      <main className={styles.main}>
+      <main className="main">
         <SideContent />
-        <div className={styles.card}>
-          <div className={styles.cardImage}>
+        <div className="card">
+          <div className="cardImage">
             <Image src={data.image} alt="Leonidas Esteban Logo" width={300} height={300} layout="responsive" />
           </div>
           <div>

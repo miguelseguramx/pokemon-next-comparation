@@ -8,13 +8,13 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function Pokemon({ data, ip }) {
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head title="Server Side Render" />
 
-      <main className={styles.main}>
+      <main className="main">
         <SideContent ip={ip} />
-        <div className={styles.card}>
-          <div className={styles.cardImage}>
+        <div className="card">
+          <div className="cardImage">
             <Image src={data.image} alt="Leonidas Esteban Logo" width={300} height={300} layout="responsive" />
           </div>
           <div>
